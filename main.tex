@@ -7,7 +7,6 @@
 
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
@@ -20,9 +19,28 @@
 
 \usepackage{cleveref} % For referencing
 
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+
+\usepackage{enumitem}
+
+\usepackage{url}
+
+% \usepackage[hidelinks]{hyperref} % For hyperlinks but it has issue with IEEEtran.cls
+
+% \usepackage{fontspec} % For font
+% \usepackage{polyglossia} % For font
+% \newfontfamily\sfont{ISKPOTA.TTF} % For font
+
+\usepackage{newtxtext} % IEEE LATEX Class Font issue solve
+\usepackage{newtxmath} % IEEE LATEX Class Font issue solve
+
 % ##############################################
 
 \begin{document}
+
+\renewcommand{\figurename}{Fig.} % This solve the figure name issue
 
 \title{Conference Paper Title*\\
     % {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured for https://ieeexplore.ieee.org  and
@@ -52,9 +70,13 @@
 
 \input{Sections/Conclusion.tex}
 
+% ##############################################
+
+% Remove below code and these are for reference
+\newpage
 This is cite example. \cite{IEEEexample:bluebookbook}
 
-This is reference. \cref{conclusion,designanddevelopment} or \ref{introduction}
+This is reference. \cref{sec:conclusion,sec:designanddevelopment} or \ref{sec:introduction}
 \newline
 \begin{itemize}
     \item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
@@ -64,8 +86,10 @@ This is reference. \cref{conclusion,designanddevelopment} or \ref{introduction}
 \end{itemize}
 
 \begin{equation}
-    a+b=\gamma\label{eq}
+    a+b=\gamma\label{eq:name}
 \end{equation}
+
+Use https://www.latex-tables.com/ to create table
 
 \begin{table}[htbp]
     \caption{Table Type Styles}
@@ -80,15 +104,22 @@ This is reference. \cref{conclusion,designanddevelopment} or \ref{introduction}
             \hline
             \multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
         \end{tabular}
-        \label{tab1}
+        \label{tab1e:name}
     \end{center}
 \end{table}
 
 \begin{figure}[htbp]
-    \centerline{\includegraphics[width=0.5\textwidth]{Photos/fig1.png}}
-    \caption{Example of a figure caption.}
-    \label{fig}
+    \includegraphics[width=3.5in]{Photos/fig1.png}
+    \caption{Example of a figure caption. - ONE Column}
+    \label{fig:name1}
 \end{figure}
+
+\begin{figure}[htbp]
+    \includegraphics[width=7.16in]{Photos/fig1.png}
+    \caption{Example of a figure caption. - TWO Column}
+    \label{fig:name2}
+\end{figure}
+
 
 \input{Ref}
 
