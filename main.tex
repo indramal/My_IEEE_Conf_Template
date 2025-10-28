@@ -36,6 +36,14 @@
 \usepackage{newtxtext} % IEEE LATEX Class Font issue solve
 \usepackage{newtxmath} % IEEE LATEX Class Font issue solve
 
+% \usepackage{float} % For float, when use H (exactly heare) command to figure
+% \usepackage{subfig} % For subfigure
+\usepackage{subcaption} % For subfigure - moden way - same like subfig
+
+\usepackage{booktabs} % For table
+\usepackage{multirow} % For table but multirow
+
+
 % ##############################################
 
 \begin{document}
@@ -73,52 +81,8 @@
 % ##############################################
 
 % Remove below code and these are for reference
-\newpage
-This is cite example. \cite{IEEEexample:bluebookbook}
 
-This is reference. \cref{sec:conclusion,sec:designanddevelopment} or \ref{sec:introduction}
-\newline
-\begin{itemize}
-    \item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-    \item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-    \item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-    \item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
-\end{itemize}
-
-\begin{equation}
-    a+b=\gamma\label{eq:name}
-\end{equation}
-
-Use https://www.latex-tables.com/ to create table
-
-\begin{table}[htbp]
-    \caption{Table Type Styles}
-    \begin{center}
-        \begin{tabular}{|c|c|c|c|}
-            \hline
-            \textbf{Table} & \multicolumn{3}{|c|}{\textbf{Table Column Head}}                                                         \\
-            \cline{2-4}
-            \textbf{Head}  & \textbf{\textit{Table column subhead}}           & \textbf{\textit{Subhead}} & \textbf{\textit{Subhead}} \\
-            \hline
-            copy           & More table copy$^{\mathrm{a}}$                   &                           &                           \\
-            \hline
-            \multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
-        \end{tabular}
-        \label{tab1e:name}
-    \end{center}
-\end{table}
-
-\begin{figure}[htbp]
-    \includegraphics[width=3.5in]{Photos/fig1.png}
-    \caption{Example of a figure caption. - ONE Column}
-    \label{fig:name1}
-\end{figure}
-
-\begin{figure}[htbp]
-    \includegraphics[width=7.16in]{Photos/fig1.png}
-    \caption{Example of a figure caption. - TWO Column}
-    \label{fig:name2}
-\end{figure}
+\input{samplecodes}
 
 % Remove up to here 
 
